@@ -3,7 +3,7 @@ from abc import abstractmethod
 from user import User
 
 
-class UserRepository(metaclass=ABCMeta):
+class IUserRepository(metaclass=ABCMeta):
     @abstractmethod
     def save(self, user) -> User:
         pass

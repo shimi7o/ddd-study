@@ -1,12 +1,12 @@
 from typing import Optional
-from user_repository import UserRepository
+from user_repository import IUserRepository
 from user import User
 
 # DBの代わり
 USER_LIST = []
 
 
-class DB(UserRepository):
+class DB(IUserRepository):
     def save(self, user: User) -> User:
         USER_LIST.append(user)
         return user

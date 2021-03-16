@@ -5,7 +5,7 @@ import uuid
 @dataclass
 class User:
     __name: str
-    __id: str = str(uuid.uuid4())
+    __id: str
 
     def __post_init__(self) -> None:
         if not self.__id:

@@ -1,9 +1,9 @@
 from user import User
-from user_repository import UserRepository
+from user_repository import IUserRepository
 
 
 class UserService:
-    user_repository: UserRepository
+    user_repository: IUserRepository
 
     def __init__(self, user_repository):
         self.user_repository = user_repository
