@@ -1,4 +1,5 @@
 from user_repository import UserRepository
+from user_service import UserService
 from user import User
 from db import DB
 import uuid
@@ -13,8 +14,11 @@ class Program:
 
     def create_user(self, user_name: str):
         user = User(str(uuid.uuid4()), user_name)
+        user_service = UserService(self.user_repository)
+        if user_service.exists(user):
+            raise ValueError("すでに存在するユーザー名です")
 
-		# TODO: 重複確認
+        # TODO: 排他制御
 
         user_repository.save(user)
 

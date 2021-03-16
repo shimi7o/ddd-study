@@ -9,4 +9,4 @@ class UserService:
         self.user_repository = user_repository
 
     def exists(self, user: User) -> bool:
-        self.user_repository.find(user.name)
+        self.user_repository.find_by_name(user.name)
